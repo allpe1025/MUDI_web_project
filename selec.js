@@ -67,10 +67,24 @@ const moodCategories = [
 const tagList = document.querySelector(".tag-list");
 const counter = document.querySelector("#selected-count");
 const selectedList = document.querySelector(".selected-list");
+const trackCountInput = document.querySelector("#track-count");
+const trackStepButtons = document.querySelectorAll(".track-step");
 const recommendButton = document.querySelector(".recommend-button");
 const statusMessage = document.querySelector(".status-message");
 const root = document.documentElement;
 const MAX_SELECTIONS = 3;
+const MIN_TRACKS = 1;
+const MAX_TRACKS = 100;
+
+const clampTrackCount = (value) => Math.min(MAX_TRACKS, Math.max(MIN_TRACKS, Number(value) || 10));
+
+trackStepButtons.forEach((button) => button.addEventListener("click", () => {
+    trackCountInput.value = clampTrackCount(Number(trackCountInput.value) + Number(button.dataset.step));
+}));
+
+trackCountInput.addEventListener("change", () => {
+    trackCountInput.value = clampTrackCount(trackCountInput.value);
+});
 
 const moodIcons = Object.fromEntries(
     Object.keys(emotionTagMap).map((emotion, index) => [emotion, moodStyles[index][0]])
@@ -152,7 +166,10 @@ tags.forEach((tag) => tag.addEventListener("click", () => {
 recommendButton.addEventListener("click", () => {
     const emotions = getSelected().map((tag) => tag.dataset.mood);
     const musicTags = [...new Set(emotions.flatMap((emotion) => emotionTagMap[emotion]))];
+    const trackCount = clampTrackCount(trackCountInput.value);
+    trackCountInput.value = trackCount;
     sessionStorage.setItem("mudiSelectedMoods", JSON.stringify(emotions));
     sessionStorage.setItem("mudiMusicTags", JSON.stringify(musicTags));
-    statusMessage.textContent = `Finding music for your ${emotions.join(", ")} mood.`;
+    sessionStorage.setItem("mudiTrackCount", String(trackCount));
+    statusMessage.textContent = `Finding ${trackCount} tracks for your ${emotions.join(", ")} mood.`;
 });

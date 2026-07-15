@@ -33,10 +33,20 @@
             <div class="tag-list" role="group" aria-describedby="selection-help"></div>
 
             <div class="selection-footer">
-                <div class="selected-preview" aria-live="polite">
-                    <span class="selected-label">Your moods</span>
-                    <div class="selected-list">
-                        <span class="empty-selection">Nothing selected yet</span>
+                <div class="selected-preview">
+                    <div class="selected-moods">
+                        <span class="selected-label">Your moods</span>
+                        <div class="selected-list" aria-live="polite">
+                            <span class="empty-selection">Nothing selected yet</span>
+                        </div>
+                    </div>
+                    <div class="track-picker">
+                        <label for="track-count">Tracks</label>
+                        <div class="track-stepper">
+                            <button type="button" class="track-step" data-step="-1" aria-label="Remove one track">−</button>
+                            <input id="track-count" type="number" min="1" max="100" value="20" inputmode="numeric" aria-label="Number of tracks">
+                            <button type="button" class="track-step" data-step="1" aria-label="Add one track">+</button>
+                        </div>
                     </div>
                 </div>
                 <div class="selection-meta">

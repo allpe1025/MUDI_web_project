@@ -189,6 +189,14 @@ body::before {
     min-height: 38px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.selected-moods {
+    min-width: 0;
+    display: flex;
+    align-items: center;
     gap: 14px;
 }
 
@@ -220,6 +228,66 @@ body::before {
 
 .selected-chip span { margin-right: 5px; }
 .empty-selection { color: #65616b; font-size: 12px; }
+
+.track-picker {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.track-picker > label {
+    color: #77737e;
+    font: 700 10px/1 "Manrope", sans-serif;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.track-stepper {
+    height: 34px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 10px;
+    background: rgba(255,255,255,.045);
+}
+
+.track-step,
+#track-count {
+    height: 100%;
+    border: 0;
+    color: #eeeaf2;
+    background: transparent;
+    font-family: "Manrope", sans-serif;
+}
+
+.track-step {
+    width: 30px;
+    padding: 0;
+    color: #99949f;
+    font-size: 17px;
+    cursor: pointer;
+    transition: color .2s ease, background .2s ease;
+}
+
+.track-step:hover { color: var(--accent); background: rgba(var(--accent-rgb), .1); }
+
+#track-count {
+    width: 40px;
+    padding: 0 2px;
+    border-right: 1px solid rgba(255,255,255,.08);
+    border-left: 1px solid rgba(255,255,255,.08);
+    outline: none;
+    font-size: 12px;
+    font-weight: 800;
+    text-align: center;
+    appearance: textfield;
+}
+
+#track-count::-webkit-inner-spin-button,
+#track-count::-webkit-outer-spin-button { margin: 0; appearance: none; }
+#track-count:focus { color: var(--accent); background: rgba(var(--accent-rgb), .08); }
 
 .selection-meta {
     display: flex;
