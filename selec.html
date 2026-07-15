@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f0e12">
+    <title>MUDI | Choose Your Mood</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="source/MUDI-cloud-clean.png">
+    <link rel="stylesheet" href="selec.css">
+</head>
+<body>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <a class="brand" href="main.html" aria-label="Go to the MUDI home page">
+            <img src="source/MUDI-cloud-clean.png" alt="">
+            <span>MUDI</span>
+        </a>
+    </header>
+
+    <main class="selection-page">
+        <section class="heading" aria-labelledby="page-title">
+            <span class="eyebrow">MOOD CHECK</span>
+            <h1 id="page-title">How are you feeling right now?</h1>
+            <p>Choose the feelings that fit you best.<br>We’ll find music that matches your mood today.</p>
+        </section>
+
+        <section class="mood-card" aria-label="Choose your mood">
+            <div class="tag-list" role="group" aria-describedby="selection-help"></div>
+
+            <div class="selection-footer">
+                <div class="selected-preview" aria-live="polite">
+                    <span class="selected-label">Your moods</span>
+                    <div class="selected-list">
+                        <span class="empty-selection">Nothing selected yet</span>
+                    </div>
+                </div>
+                <div class="selection-meta">
+                    <p id="selection-help">Choose up to 3 moods</p>
+                    <p class="counter"><strong id="selected-count">0</strong><span> / 3 selected</span></p>
+                </div>
+            </div>
+        </section>
+
+        <button class="recommend-button" type="button" disabled>
+            <span>Get Music Recommendations</span>
+            <span class="arrow" aria-hidden="true">→</span>
+        </button>
+        <p class="status-message" role="status" aria-live="polite"></p>
+    </main>
+
+    <script src="selec.js"></script>
+</body>
+</html>
