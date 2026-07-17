@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MUDI | Music Using Daily Impressions</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link rel="icon" href="source/MUDI-cloud-clean.png"/>
+    <link rel="apple-touch-icon" href="source/MUDI-cloud-clean.png"/>
+</head>
+<body>
+    <header>
+        <h1 class="logo">
+            <img src="source/MUDI-cloud-clean.png" alt="" aria-hidden="true">
+            <span>MUDI</span>
+        </h1>
+        <nav class="button-group" aria-label="User menu">
+            <button type="button" id="login">Login</button>
+            <button type="button" id="signup">Sign Up</button>
+            <button type="button" id="mypage">My Page</button>
+        </nav>
+    </header>
+
+    <main class="content">
+        <section class="intro">
+            <p>
+                Music Using Daily Impressions.
+                Discover songs shaped by how your day felt, what stayed with you, and the mood you want to keep.
+            </p>
+            <a class="start-button" href="selec.html">Start</a>
+        </section>
+        <div class="logo-image" aria-label="MUDI logo">
+            <img src="source/MUDI-cloud-clean.png" alt="">
+            <strong>MUDI</strong>
+            <span>Music Using Daily Impressions</span>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 MUDI. All rights reserved.</p>
+        <p>Music data provided by last.fm, YouTube, and Spotify.</p>
+    </footer>
+</body>
+</html>
