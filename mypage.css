@@ -35,7 +35,6 @@ body {
     padding: 40px 24px 100px;
 }
 
-/* 1. 회원 정보 (stats.fm 스타일) */
 .profile-section {
     margin-bottom: 60px;
 }
@@ -83,7 +82,6 @@ body {
 .stat-item strong { font-size: 24px; font-weight: 800; }
 .stat-item span { color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; }
 
-/* 2. 플리들 영역 (그리드) */
 .playlists-section {
     margin-bottom: 80px;
 }
@@ -95,7 +93,6 @@ body {
 
 .playlist-grid {
     display: grid;
-    /* 최소 180px 너비로, 공간 남으면 알아서 열 늘어남 */
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 24px;
 }
@@ -114,7 +111,7 @@ body {
 
 .card-img-placeholder {
     width: 100%;
-    aspect-ratio: 1 / 1; /* 완벽한 정사각형 유지 */
+    aspect-ratio: 1 / 1;
     background: linear-gradient(135deg, #2a2631, #1a1820);
     border-radius: 4px;
     margin-bottom: 16px;
@@ -133,7 +130,6 @@ body {
     color: var(--muted);
 }
 
-/* 3. 로그아웃 / 탈퇴 영역 */
 .account-actions {
     display: flex;
     flex-direction: column;
@@ -147,7 +143,7 @@ body {
     font-weight: 700;
     border-radius: 6px;
     cursor: pointer;
-    text-align: left; /* 이미지1처럼 좌측 정렬 */
+    text-align: left;
     transition: all 0.2s ease;
 }
 
