@@ -93,43 +93,69 @@ body {
 
 .playlist-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); 
     gap: 24px;
 }
 
 .playlist-card {
-    background-color: var(--bg-card);
-    padding: 16px;
-    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
     cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    background: transparent;
+    padding: 0; /* 이전 패딩 제거 */
+    border: none;
+    transition: transform 0.2s ease;
 }
 .playlist-card:hover {
-    background-color: #232128;
     transform: translateY(-4px);
 }
 
-.card-img-placeholder {
+.card-cover {
     width: 100%;
     aspect-ratio: 1 / 1;
-    background: linear-gradient(135deg, #2a2631, #1a1820);
-    border-radius: 4px;
-    margin-bottom: 16px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    border-radius: 8px;
+    background-color: #2a2a2a;
+    margin-bottom: 12px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.playlist-card:hover .add-cover {
+    background-color: rgba(167, 139, 250, 0.08);
+    box-shadow: 0 0 0 2px var(--accent);
+}
+
+.plus-icon {
+    font-size: 64px;
+    font-weight: 300;
+    color: var(--muted);
+    transition: color 0.2s;
+}
+.playlist-card:hover .plus-icon {
+    color: var(--accent);
 }
 
 .card-title {
-    margin: 0 0 6px 0;
+    margin: 0 0 4px 0;
     font-size: 15px;
     font-weight: 700;
-    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-.card-desc {
+
+.card-stats {
     margin: 0;
     font-size: 13px;
     color: var(--muted);
+    min-height: 18px;
 }
-
+/* 3. 로그아웃 / 탈퇴 영역 */
 .account-actions {
     display: flex;
     flex-direction: column;
@@ -143,7 +169,7 @@ body {
     font-weight: 700;
     border-radius: 6px;
     cursor: pointer;
-    text-align: left;
+    text-align: left; /* 이미지1처럼 좌측 정렬 */
     transition: all 0.2s ease;
 }
 
@@ -163,4 +189,3 @@ body {
     background-color: rgba(255, 118, 117, 0.1);
     border-color: #ff7675;
 }
-
