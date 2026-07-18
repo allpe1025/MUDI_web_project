@@ -172,4 +172,6 @@ recommendButton.addEventListener("click", () => {
     sessionStorage.setItem("mudiMusicTags", JSON.stringify(musicTags));
     sessionStorage.setItem("mudiTrackCount", String(trackCount));
     statusMessage.textContent = `Finding ${trackCount} tracks for your ${emotions.join(", ")} mood.`;
+
+    window.location.href = "result.html";
 });

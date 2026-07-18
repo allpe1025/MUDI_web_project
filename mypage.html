@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUDI | My Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="source/MUDI-cloud-clean.png">
+    <link rel="stylesheet" href="mypage.css">
+</head>
+<body>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <a class="brand" href="main.html">
+            <img src="source/MUDI-cloud-clean.png" alt="">
+            <span>MUDI</span>
+        </a>
+    </header>
+
+    <main class="mypage-container">
+        <!-- 1. 회원 정보 영역 (stats.fm 스타일) -->
+        <section class="profile-section">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <!-- 유저 이니셜이나 프로필 이미지 들어갈 자리 -->
+                    <span>U</span>
+                </div>
+                <div class="profile-info">
+                    <h1 class="username">User Name</h1>
+                    <p class="user-desc">Hey there! I am using MUDI.</p>
+                </div>
+            </div>
+            
+            <!-- stats.fm 특유의 통계 수치 라인 -->
+            <div class="profile-stats">
+                <div class="stat-item">
+                    <strong id="stat-playlists">0</strong>
+                    <span>playlists</span>
+                </div>
+                <div class="stat-item">
+                    <strong id="stat-tracks">0</strong>
+                    <span>saved tracks</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. 플리들 영역 (정사각형 그리드) -->
+        <section class="playlists-section">
+            <h2 class="section-title">My Playlists</h2>
+            <div class="playlist-grid" id="playlist-container">
+                <!-- JS로 플리 카드들이 렌더링될 공간 -->
+            </div>
+        </section>
+
+        <!-- 3. 로그아웃 및 탈퇴 영역 -->
+        <section class="account-actions">
+            <button class="logout-btn" id="logout-btn">Log Out</button>
+            <button class="delete-account-btn" id="delete-account-btn">Delete Account</button>
+        </section>
+    </main>
+
+    <script src="mypage.js"></script>
+</body>
+</html>
+
