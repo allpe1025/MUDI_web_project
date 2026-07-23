@@ -39,17 +39,4 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
         container.appendChild(card);
     });
-
-    // 3. 버튼 이벤트 리스너
-    document.getElementById("logout-btn").addEventListener("click", () => {
-        if(confirm("로그아웃 하시겠습니까?")) window.location.href = "main.html";
-    });
-
-    document.getElementById("delete-account-btn").addEventListener("click", () => {
-        if(confirm("정말로 탈퇴하시겠습니까?")) {
-            alert("탈퇴 처리되었습니다.");
-            window.location.href = "main.html";
-        }
-    });
 });
-
