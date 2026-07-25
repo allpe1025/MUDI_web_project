@@ -18,8 +18,10 @@
             <span>MUDI</span>
         </h1>
         <nav class="button-group" aria-label="User menu">
-            <button type="button" id="login">Login</button>
-            <button type="button" id="signup">Sign Up</button>
+            <button type="button" id="connect-services" class="connect-trigger">
+                <span class="connection-dot" aria-hidden="true"></span>
+                <span class="connect-label">Connect</span>
+            </button>
             <button type="button" id="mypage" class="mypage-btn" onclick="location.href='mypage.html'">My Page</button>
         </nav>
     </header>
@@ -43,5 +45,37 @@
         <p>&copy; 2026 MUDI. All rights reserved.</p>
         <p>Music data provided by last.fm, YouTube, and Spotify.</p>
     </footer>
+
+    <div class="modal-backdrop" id="connection-modal" hidden>
+        <section class="connection-modal" role="dialog" aria-modal="true" aria-labelledby="connection-title">
+            <button class="modal-close" type="button" aria-label="Close connection dialog">&times;</button>
+            <span class="modal-eyebrow">EXPORT WITHOUT THE WAIT</span>
+            <h2 id="connection-title">Connect your music</h2>
+            <p class="modal-description">Connect now, then send your MUDI playlists without signing in again.</p>
+
+            <div class="provider-list">
+                <button class="provider-button" type="button" data-provider="google">
+                    <span class="provider-icon google-icon" aria-hidden="true">G</span>
+                    <span class="provider-copy">
+                        <strong>Continue with Google</strong>
+                        <small>Export playlists to YouTube</small>
+                    </span>
+                    <span class="provider-status">Connect</span>
+                </button>
+
+                <button class="provider-button" type="button" data-provider="spotify">
+                    <span class="provider-icon spotify-icon" aria-hidden="true">♪</span>
+                    <span class="provider-copy">
+                        <strong>Continue with Spotify</strong>
+                        <small>Export playlists to Spotify</small>
+                    </span>
+                    <span class="provider-status">Connect</span>
+                </button>
+            </div>
+
+            <p class="privacy-note">This demo only previews the connection flow. No account data is requested or stored.</p>
+        </section>
+    </div>
+    <script src="index.js"></script>
 </body>
 </html>

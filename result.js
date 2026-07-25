@@ -177,3 +177,66 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+const exportModal = document.querySelector("#export-modal");
+const exportButton = document.querySelector(".export-btn");
+const exportClose = document.querySelector(".export-close");
+const exportOptions = document.querySelectorAll(".export-options button");
+const exportMessage = document.querySelector(".export-message");
+
+function getDemoConnections() {
+    try {
+        return JSON.parse(localStorage.getItem("mudi-demo-connections")) || {};
+    } catch {
+        return {};
+    }
+}
+
+function renderExportConnections() {
+    const connections = getDemoConnections();
+    exportOptions.forEach((option) => {
+        const connected = Boolean(connections[option.dataset.provider]);
+        option.classList.toggle("connected", connected);
+        option.querySelector(".export-state").textContent =
+            connected ? "Ready to export" : "Not connected";
+        option.querySelector(".export-action").textContent =
+            connected ? "Export" : "Connect";
+    });
+}
+
+exportButton.addEventListener("click", () => {
+    exportMessage.textContent = "";
+    renderExportConnections();
+    exportModal.hidden = false;
+    exportClose.focus();
+});
+
+function closeExportModal() {
+    exportModal.hidden = true;
+    exportButton.focus();
+}
+
+exportClose.addEventListener("click", closeExportModal);
+exportModal.addEventListener("click", (event) => {
+    if (event.target === exportModal) closeExportModal();
+});
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && !exportModal.hidden) closeExportModal();
+});
+
+exportOptions.forEach((option) => {
+    option.addEventListener("click", () => {
+        const provider = option.dataset.provider;
+        const connections = getDemoConnections();
+        const serviceName = provider === "google" ? "YouTube" : "Spotify";
+
+        if (connections[provider]) {
+            exportMessage.textContent = `${serviceName} export UI is ready to connect to the backend.`;
+            return;
+        }
+
+        connections[provider] = true;
+        localStorage.setItem("mudi-demo-connections", JSON.stringify(connections));
+        renderExportConnections();
+        exportMessage.textContent = `${serviceName} connected for this UI demo.`;
+    });
+});

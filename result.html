@@ -61,6 +61,28 @@
         <button class="export-btn">Export</button>
     </div>
 
+    <div class="export-modal-backdrop" id="export-modal" hidden>
+        <section class="export-modal" role="dialog" aria-modal="true" aria-labelledby="export-title">
+            <button class="export-close" type="button" aria-label="Close export dialog">&times;</button>
+            <span class="export-eyebrow">SAVE YOUR SOUND</span>
+            <h2 id="export-title">Export playlist</h2>
+            <p>Choose where you want to keep this playlist.</p>
+            <div class="export-options">
+                <button type="button" data-provider="google">
+                    <span class="export-service-icon google">G</span>
+                    <span><strong>YouTube</strong><small class="export-state">Not connected</small></span>
+                    <span class="export-action">Connect</span>
+                </button>
+                <button type="button" data-provider="spotify">
+                    <span class="export-service-icon spotify">♪</span>
+                    <span><strong>Spotify</strong><small class="export-state">Not connected</small></span>
+                    <span class="export-action">Connect</span>
+                </button>
+            </div>
+            <p class="export-message" role="status" aria-live="polite"></p>
+        </section>
+    </div>
+
     <script src="result.js"></script>
 </body>
 </html>

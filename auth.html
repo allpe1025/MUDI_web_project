@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#111112">
+    <title>MUDI | Welcome</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="source/MUDI-cloud-clean.png">
+    <link rel="stylesheet" href="auth.css">
+</head>
+<body>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Go to the MUDI home page">
+            <img src="source/MUDI-cloud-clean.png" alt="">
+            <span>MUDI</span>
+        </a>
+    </header>
+
+    <main class="auth-page">
+        <section class="auth-card" aria-labelledby="auth-title">
+            <div class="auth-heading">
+                <span class="eyebrow">Music Using Daily Impressions</span>
+                <h1 id="auth-title">Welcome back</h1>
+                <p id="auth-description">Sign in and keep the music that fits your day.</p>
+            </div>
+
+            <div class="auth-tabs" role="tablist" aria-label="Account access">
+                <button class="auth-tab active" id="login-tab" type="button" role="tab" aria-selected="true" aria-controls="login-panel" data-mode="login">Log In</button>
+                <button class="auth-tab" id="signup-tab" type="button" role="tab" aria-selected="false" aria-controls="signup-panel" data-mode="signup">Sign Up</button>
+            </div>
+
+            <div class="tab-panel active" id="login-panel" role="tabpanel" aria-labelledby="login-tab">
+                <form id="login-form" novalidate>
+                    <div class="field">
+                        <label for="login-email">Email</label>
+                        <input id="login-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+                        <span class="field-error"></span>
+                    </div>
+                    <div class="field">
+                        <div class="label-row">
+                            <label for="login-password">Password</label>
+                            <a href="#" class="quiet-link">Forgot password?</a>
+                        </div>
+                        <div class="password-field">
+                            <input id="login-password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" minlength="8" required>
+                            <button class="password-toggle" type="button" aria-label="Show password">Show</button>
+                        </div>
+                        <span class="field-error"></span>
+                    </div>
+                    <button class="submit-button" type="submit">Log In</button>
+                    <p class="form-status" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+
+            <div class="tab-panel" id="signup-panel" role="tabpanel" aria-labelledby="signup-tab" hidden>
+                <form id="signup-form" novalidate>
+                    <div class="field">
+                        <label for="signup-name">Name</label>
+                        <input id="signup-name" name="name" type="text" autocomplete="name" placeholder="How should we call you?" required>
+                        <span class="field-error"></span>
+                    </div>
+                    <div class="field">
+                        <label for="signup-email">Email</label>
+                        <input id="signup-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+                        <span class="field-error"></span>
+                    </div>
+                    <div class="field">
+                        <label for="signup-password">Password</label>
+                        <div class="password-field">
+                            <input id="signup-password" name="password" type="password" autocomplete="new-password" placeholder="At least 8 characters" minlength="8" required>
+                            <button class="password-toggle" type="button" aria-label="Show password">Show</button>
+                        </div>
+                        <span class="field-error"></span>
+                    </div>
+                    <label class="agreement">
+                        <input type="checkbox" name="agreement" required>
+                        <span>I agree to the Terms and Privacy Policy.</span>
+                    </label>
+                    <button class="submit-button" type="submit">Create Account</button>
+                    <p class="form-status" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+
+            <p class="auth-note">Find your mood. Save your sound.</p>
+        </section>
+    </main>
+
+    <script src="auth.js"></script>
+</body>
+</html>
